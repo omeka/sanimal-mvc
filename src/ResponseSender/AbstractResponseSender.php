@@ -22,7 +22,7 @@ abstract class AbstractResponseSender implements ResponseSenderInterface
         $headers = $response->getHeaders();
 
         if (is_iterable($headers)) {
-            foreach ($response->getHeaders() as $header) {
+            foreach ($headers as $header) {
                 if ($header instanceof MultipleHeaderInterface) {
                     header($header->toString(), false);
                     continue;
